@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <data>
+        <variable
+            name="vm"
+            type="com.example.sumandas.shop.viewmodels.CategoryItemModel" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            app:imageUrl="@{vm.imageUrl}"
+            android:src="@drawable/empty_image_placeholder_large"
+            android:layout_margin="4dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/colorFillPrimary"
+            android:textSize="@dimen/header_text_size2"
+            android:text="@{vm.name}"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/colorBrandPrimaryDark"
+            android:text="@{vm.noItems+@string/products_count}"/>
+
+        <LinearLayout
+            android:id="@+id/subcategory_list"
+            android:layout_marginTop="4dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:items="@{vm.subCategoryVm}"
+            app:view_provider="@{vm}"
+            >
+        </LinearLayout>
+    </LinearLayout>
+
+</layout>

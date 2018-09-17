@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_enabled="false">
+        <shape android:shape="rectangle">
+            <corners android:radius="@dimen/default_height_max"/>
+            <solid android:color="@color/button_outline_holo_focused"/>
+            <stroke android:width="@dimen/default_line_thickness" android:color="@color/button_outline_holo_focused"/>
+        </shape>
+    </item>
+
+    <item android:state_enabled="false" android:state_focused="true">
+        <shape android:shape="rectangle">
+            <corners android:radius="@dimen/default_height_max"/>
+            <solid android:color="@color/button_outline_holo"/>
+            <stroke android:width="@dimen/default_corner_radius" android:color="@color/button_outline_holo_focused"/>
+        </shape>
+    </item>
+
+    <item android:state_focused="true" android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <corners android:radius="@dimen/default_height_max"/>
+            <solid android:color="@color/button_outline_holo"/>
+            <stroke android:width="@dimen/default_line_thickness" android:color="@color/button_outline_holo_pressed"/>
+        </shape>
+    </item>
+
+    <item android:state_focused="false" android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <corners android:radius="@dimen/default_height_max"/>
+            <solid android:color="@color/button_outline_holo"/>
+            <stroke android:width="@dimen/default_line_thickness" android:color="@color/button_outline_holo_pressed"/>
+        </shape>
+    </item>
+
+    <item>
+        <shape android:shape="rectangle" android:state_enabled="true">
+            <corners android:radius="@dimen/default_height_max"/>
+            <solid android:color="@color/button_outline_holo_disabled"/>
+            <stroke android:width="@dimen/default_line_thickness" android:color="@color/button_outline_holo"/>
+        </shape>
+    </item>
+
+</selector>

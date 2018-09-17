@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Shop</string>
+    <string name="action_settings">Settings</string>
+    <string name="products_count">-Products in ZopNow</string>
+    <string name="shop_categories">Shop Categories</string>
+    <string name="Rs">\u20B9</string>
+    <string name="brands">Brands</string>
+    <string name="sort_by">Sort By</string>
+    <string name="search_product">Search</string>
+    <string name="brand">Brand</string>
+    <string name="mrp">MRP</string>
+    <string name="offer">Offer</string>
+    <string name="offer_price">Offer Price</string>
+</resources>

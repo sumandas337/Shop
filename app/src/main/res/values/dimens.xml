@@ -1,0 +1,33 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="fab_margin2">24dp</dimen>
+    <dimen name="header_text_size1">20sp</dimen>
+    <dimen name="header_text_size2">16sp</dimen>
+    <dimen name="default_height_max">56dp</dimen>
+    <dimen name="default_line_thickness">1dp</dimen>
+    <dimen name="default_corner_radius">2dp</dimen>
+    <dimen name="default_space">16dp</dimen>
+    <dimen name="default_space_40">40dp</dimen>
+    <dimen name="default_height_medium">48dp</dimen>
+    <dimen name="nav_header_bottom_margin">32dp</dimen>
+    <dimen name="dimen_text_body">14sp</dimen>
+    <dimen name="default_corner_radius_medium">4dp</dimen>
+    <dimen name="default_corner_radius_big">8dp</dimen>
+
+    <dimen name="default_badge_radius">20dp</dimen>
+
+    <dimen name="default_space_Bigger">26dp</dimen>
+    <dimen name="default_space_ExtraBig">30dp</dimen>
+    <dimen name="default_space_Large">36dp</dimen>
+    <dimen name="default_space_medium_small">12dp</dimen>
+    <dimen name="default_space_tiny">4dp</dimen>
+    <dimen name="default_space_very_tiny">2dp</dimen>
+    <dimen name="default_space_very_small">6dp</dimen>
+    <dimen name="default_space_small">8dp</dimen>
+    <dimen name="default_divider_height">1dp</dimen>
+    <dimen name="default_divider_width">1dp</dimen>
+    <dimen name="search_width">120dp</dimen>
+    <dimen name="default_space_pull">-16dp</dimen>
+
+
+</resources>

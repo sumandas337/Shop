@@ -1,0 +1,42 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:bind="http://schemas.android.com/apk/res-auto"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="vm"
+            type="com.example.sumandas.shop.viewmodels.FilterViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/default_height_medium"
+        android:clickable="true"
+        style="@style/FilterItemStyle"
+        android:onClick="@{vm::onItemClicked}"
+        >
+
+        <TextView
+            android:id="@+id/filter_constraint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/default_space"
+            android:layout_alignParentLeft="true"
+            android:gravity="center"
+            android:layout_centerVertical="true"
+            android:textSize="@dimen/header_text_size2"
+            android:textColor="@color/colorFillPrimary"
+            android:text="@{vm.mValue}" />
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/default_space_small"
+            android:layout_centerVertical="true"
+            android:checked="@={vm.isApplied}"
+            android:onClick="@{vm::onFilterClicked}"
+            android:layout_alignParentRight="true"/>
+
+    </RelativeLayout>
+
+
+</layout>

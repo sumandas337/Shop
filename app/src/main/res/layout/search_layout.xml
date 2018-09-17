@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="searchprovider"
+            type="com.example.sumandas.shop.viewproviders.SearchViewProvider" />
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhiteFillPrimary">
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:items="@{searchprovider.searchList}"
+            app:view_provider="@{searchprovider}"
+            app:numColumns="@{2}"/>
+    </RelativeLayout>
+</layout>

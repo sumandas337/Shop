@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="productProvider"
+            type="com.example.sumandas.shop.viewproviders.ProductViewModelProvider" />
+    </data>
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.MainActivity">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+        </android.support.design.widget.AppBarLayout>
+
+        <include android:id="@+id/search_widget"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/appBarLayout"
+            layout="@layout/search_widget"/>
+
+        <LinearLayout
+            android:id="@+id/search_results_widget"
+            android:layout_below="@id/search_widget"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+            <ImageView
+                android:id="@+id/close_search"
+                android:layout_width="@dimen/fab_margin2"
+                android:layout_height="@dimen/fab_margin2"
+                app:srcCompat= "@drawable/ic_cancel"
+                android:tint="@color/colorFillPrimary"/>
+            <FrameLayout
+                android:id="@+id/search_results_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </FrameLayout>
+        </LinearLayout>
+        <RelativeLayout
+            android:id="@+id/filter_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/default_height_medium"
+            android:layout_below="@id/search_results_widget"
+            android:background="@color/colorWhiteFillPrimary"
+            android:visibility="visible">
+
+            <Button
+                android:id="@+id/btn_brand_filter"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/nav_header_bottom_margin"
+
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/default_space"
+                android:background="@drawable/background_rounded_corners_filters"
+                android:paddingLeft="@dimen/default_space_small"
+                android:paddingRight="@dimen/default_space_small"
+                android:text="@string/brands"
+                android:textAllCaps="false"
+                android:textColor="@color/color_filter_text"
+                android:textSize="@dimen/dimen_text_body"
+                />
+
+            <Button
+                android:id="@+id/btn_sort_filter"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/nav_header_bottom_margin"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/default_space_small"
+                android:layout_toRightOf="@id/btn_brand_filter"
+                android:background="@drawable/background_rounded_corners_filters"
+                android:paddingLeft="@dimen/default_space"
+                android:paddingRight="@dimen/default_space_small"
+                android:text="@string/sort_by"
+                android:textAllCaps="false"
+                android:textColor="@color/color_filter_text"
+                android:textSize="@dimen/dimen_text_body"
+
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/colorBackgroundPrimary"/>
+
+        </RelativeLayout>
+        <android.support.v7.widget.RecyclerView
+            android:layout_below="@id/filter_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            app:items="@{productProvider.productList}"
+            app:view_provider="@{productProvider}"
+            app:numColumns="@{productProvider.numColumns}">
+
+        </android.support.v7.widget.RecyclerView>
+    </RelativeLayout>
+</layout>

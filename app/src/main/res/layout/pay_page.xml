@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <data>
+        <variable
+            name="vm"
+            type="com.example.sumandas.shop.viewmodels.ProductItemModel" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:orientation="vertical">
+
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+        </android.support.design.widget.AppBarLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="4dp"
+            android:textSize="@dimen/header_text_size1"
+            android:textColor="@color/colorBrandPrimaryDark"
+            android:text="@{vm.name}"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            app:imageUrl="@{vm.imageUrl}"
+            android:src="@drawable/empty_image_placeholder_large"
+            android:layout_margin="4dp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/default_space"
+            android:layout_marginRight="@dimen/default_space">
+            <TextView
+                android:id="@+id/brand_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="4dp"
+                android:layout_alignParentLeft="true"
+                android:textColor="@color/colorFillPrimary"
+                android:textSize="@dimen/header_text_size2"
+                android:text="@string/brands"/>
+
+            <TextView
+                android:id="@+id/brand_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="4dp"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/colorFillPrimary"
+                android:textSize="@dimen/header_text_size2"
+                android:text="@{vm.brand}"/>
+
+            <View
+                android:id="@+id/first_divider"
+                android:layout_below="@id/brand_label"
+                android:layout_width="match_parent"
+                android:layout_margin="@dimen/default_space_small"
+                android:layout_height="@dimen/default_divider_height"
+                android:background="@color/divider"/>
+
+
+            <TextView
+                android:id="@+id/mrp_label"
+                android:layout_below="@id/first_divider"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="4dp"
+                android:layout_alignParentLeft="true"
+                android:textColor="@color/colorFillPrimary"
+                android:textSize="@dimen/header_text_size2"
+                android:text="@string/mrp"/>
+
+            <TextView
+                android:id="@+id/mrp_value"
+                android:layout_below="@id/first_divider"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="4dp"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/colorFillPrimary"
+                android:textSize="@dimen/header_text_size2"
+                android:text="@{@string/Rs+vm.price}"/>
+
+            <View
+                android:id="@+id/second_divider"
+                android:layout_below="@id/mrp_label"
+                android:layout_width="match_parent"
+                android:layout_margin="@dimen/default_space_small"
+                android:layout_height="@dimen/default_divider_height"
+                android:background="@color/divider"/>
+
+
+            <TextView
+                android:id="@+id/discount_label"
+                android:layout_below="@id/second_divider"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="4dp"
+                android:layout_alignParentLeft="true"
+                android:textColor="@color/colorFillPrimary"
+                android:textSize="@dimen/header_text_size2"
+                android:text="@string/offer"/>
+
+            <TextView
+                android:id="@+id/discount_value"
+                android:layout_below="@id/second_divider"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="4dp"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/colorFillPrimary"
+                android:textSize="@dimen/header_text_size2"
+                android:text="@{vm.discountP}"/>
+
+            <View
+                android:id="@+id/third_divider"
+                android:layout_below="@id/discount_label"
+                android:layout_width="match_parent"
+                android:layout_margin="@dimen/default_space_small"
+                android:layout_height="@dimen/default_divider_height"
+                android:background="@color/divider"/>
+
+
+            <TextView
+                android:id="@+id/offer_label"
+                android:layout_below="@id/third_divider"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="4dp"
+                android:layout_alignParentLeft="true"
+                android:textColor="@color/colorFillPrimary"
+                android:textSize="@dimen/header_text_size2"
+                android:text="@string/offer_price"/>
+
+            <TextView
+                android:id="@+id/offer_value"
+                android:layout_below="@id/third_divider"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="4dp"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/colorFillPrimary"
+                android:textSize="@dimen/header_text_size2"
+                android:text="@{vm.discountPrice}"/>
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</layout>
