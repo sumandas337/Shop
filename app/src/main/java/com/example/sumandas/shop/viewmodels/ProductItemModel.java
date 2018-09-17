@@ -27,7 +27,8 @@ public class ProductItemModel implements IViewModel {
         imageUrl.set(StringUtils.unescapeJavaString(product.variant.images.get(0)));
         price.set(product.variant.mrp);
         brand.set(product.brand.name);
-        discountP.set(Float.toString(product.variant.discount)+"%");
+        float discount = product.variant.discount/product.variant.mrp*100;
+        discountP.set(String.format ("%.1f", discount)+"%");
         discountPrice.set(Float.toString(product.variant.mrp- product.variant.discount));
     }
 
